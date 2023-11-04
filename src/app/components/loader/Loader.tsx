@@ -2,7 +2,16 @@ import { motion } from "framer-motion";
 
 const Loader = () => {
   return (
-    <div style={{ display: "flex" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        width: "100vw",
+        background: "#000",
+      }}
+    >
       <motion.svg
         width="500"
         viewBox="0 0 710 346"
@@ -16,7 +25,7 @@ const Loader = () => {
           stroke-width="2"
           initial={{ pathLength: 0, pathOffset: 1 }}
           animate={{ pathLength: 1, pathOffset: 0 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 1.5 }}
         />
         <motion.path
           d="M1.5 312.5L264.5 73.5L339.5 175L531 3L708.5 235.5"
@@ -25,7 +34,7 @@ const Loader = () => {
           initial={{ pathLength: 0, pathOffset: 1 }}
           animate={{ pathLength: 1, pathOffset: 0 }}
           transition={{
-            duration: 1.5,
+            duration: 1,
           }}
         />
       </motion.svg>

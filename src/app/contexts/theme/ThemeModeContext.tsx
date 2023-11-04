@@ -74,7 +74,7 @@ export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({
         dark: "#dda135",
       },
       background: {
-        default: isDarkMode ? "#141b2d" : "#fcfcfc",
+        default: isDarkMode ? "#000" : "#fff",
         paper: isDarkMode ? "#1f2a40" : "#f2f0f0",
       },
       text: {
