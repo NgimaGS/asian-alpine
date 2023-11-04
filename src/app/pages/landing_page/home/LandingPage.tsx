@@ -1,4 +1,4 @@
-import { Typography, Box, Container } from "@mui/material";
+import { Typography, Box, Container, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -80,6 +80,20 @@ const LandingPage = () => {
               ASIAN ALPINE
             </Typography>
           </motion.div>
+          <Button
+            variant="contained"
+            sx={{
+              fontSize: "24px",
+              mt: 2,
+              color: "#fff",
+              fontWeight: 800,
+              textTransform: "none",
+              width: "330px",
+              backgroundColor: "primary.light",
+            }}
+          >
+            Book a Tour
+          </Button>
         </div>
       </Box>
       <Box
