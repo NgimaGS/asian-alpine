@@ -34,7 +34,7 @@ const LandingPage = () => {
       </Box>
       <Box
         sx={{
-          height: "100vh",
+          minHeight: "100vh",
           maxWidth: "100vw",
           overflowX: "hidden",
           background: "#000",
