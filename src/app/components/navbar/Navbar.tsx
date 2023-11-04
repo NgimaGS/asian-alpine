@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { AppBar, Box, Toolbar, Typography } from "@mui/material";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
-
 import * as React from "react";
 
 interface Props {
@@ -20,19 +19,19 @@ function ElevationScroll(props: Props) {
   // This is only being set here because the demo is in an iframe.
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: 100,
+    threshold: 700,
     target: window ? window() : undefined,
   });
 
   return React.cloneElement(children, {
-    elevation: trigger ? 100 : 0,
+    elevation: trigger ? 700 : 0,
   });
 }
 
 const Navbar = (props: Props) => {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: 100,
+    threshold: 700,
   });
 
   const backgroundColor = trigger ? "#000" : "transparent";
@@ -64,7 +63,6 @@ const Navbar = (props: Props) => {
           </Toolbar>
         </AppBar>
       </ElevationScroll>
-
       <Box>
         <Outlet />
       </Box>

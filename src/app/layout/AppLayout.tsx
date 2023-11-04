@@ -10,7 +10,7 @@ export const AppLayout = () => {
     // Simulate loading for 2 seconds
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 2500);
 
     return () => {
       clearTimeout(timer); // Clean up the timer if the component unmounts
@@ -21,7 +21,6 @@ export const AppLayout = () => {
     <div
       style={{
         background: "#000",
-        overflow: isLoading ? "hidden" : "auto",
         width: "100vw",
         height: "100vh",
       }}
@@ -35,15 +34,11 @@ export const AppLayout = () => {
       >
         <Loader />
       </motion.div>
-      <motion.div
-        initial={{ y: "100vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1, delay: 2, ease: "easeInOut" }}
-      >
+      <div style={{ display: isLoading ? "none" : "inherit" }}>
         <Navbar>
           <></>
         </Navbar>
-      </motion.div>
+      </div>
     </div>
   );
 };

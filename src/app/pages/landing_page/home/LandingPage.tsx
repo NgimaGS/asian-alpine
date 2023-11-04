@@ -1,13 +1,38 @@
 import { Typography, Box, Container } from "@mui/material";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+const imageUrls = [
+  "/assets/landing_page/img1.jpg",
+  "/assets/landing_page/img2.jpg",
+  "/assets/landing_page/img3.jpg",
+  "/assets/landing_page/img4.jpg",
+  "/assets/landing_page/img5.jpg",
+  // Add more image URLs here
+];
 
 const LandingPage = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      nextImage();
+    }, 6000);
+
+    return () => {
+      clearTimeout(timer); // Clean up the timer if the component unmounts
+    };
+  }, [currentImageIndex]);
   return (
     <div>
       <Box
         sx={{
-          height: { xs: "100vh", md: "100vh" },
-          background:
-            "linear-gradient(0deg, rgba(0, 0, 0, 0.97), rgba(0, 0, 0, 0.27)), url(/assets/landing_page/img2.jpg)",
+          height: "100vh",
+          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.97), rgba(0, 0, 0, 0.27)), url(${imageUrls[currentImageIndex]})`,
           backgroundSize: "cover",
           backgroundAttachment: "fixed",
           backgroundPosition: "center",
@@ -17,19 +42,44 @@ const LandingPage = () => {
           alignItems: "center",
         }}
       >
-        <div>
-          <Typography sx={{ fontWeight: 700, fontSize: "18px", color: "#fff" }}>
-            EXPERIENCE meet's
-          </Typography>
-          <Typography
-            sx={{
-              fontWeight: 800,
-              fontSize: "42px",
-              color: "#f98621",
-            }}
+        <div
+          style={{ overflow: "hidden", maxWidth: "100vw", maxHeight: "100vh" }}
+        >
+          <motion.div
+            initial={{ y: "90vh" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1.5, delay: 2, ease: "easeInOut" }}
           >
-            ENJOYMENT
-          </Typography>
+            <Typography
+              sx={{ fontWeight: 700, fontSize: "18px", color: "#fff" }}
+            >
+              EXPERIENCE meet's
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 800,
+                fontSize: "42px",
+                color: "#f98621",
+              }}
+            >
+              ENJOYMENT
+            </Typography>
+          </motion.div>
+          <motion.div
+            initial={{ x: "90vw" }}
+            animate={{ x: 0 }}
+            transition={{ duration: 1.8, delay: 2.5, ease: "easeInOut" }}
+          >
+            <Typography
+              sx={{
+                fontWeight: 800,
+                fontSize: "42px",
+                color: "#fff",
+              }}
+            >
+              ASIAN ALPINE
+            </Typography>
+          </motion.div>
         </div>
       </Box>
       <Box
@@ -38,50 +88,59 @@ const LandingPage = () => {
           maxWidth: "100vw",
           overflowX: "hidden",
           background: "#000",
-          paddingTop: "64px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        <Container sx={{ color: "#fff", textAlign: "justify" }}>
-          <Typography>WELCOME TO ASIAN ALPINE TREKS</Typography>
-          <Typography>Namaste and very warm welcome to our guest!</Typography>
-          <Typography>
-            After giving worthy time of experiences in Nepal’s field of
-            trekking, we commenced to operate the trekking agency titling Asian
-            AlpineTreks & Expedition P. Ltd. Formally we are recognized as a
-            leading specialists for Trekking, Climbing, Expedition, Tour, white
-            water rafting, Jungle safari and other adventurous activities
-            operator Himalayan land of Tibet, Bhutan, India and of course Nepal
-            where we are primarily based. Our head office is situated in Boudha,
-            in the heart of Kathmandu in Nepal. The company was founded by
-            Mr.Dawa Sherpa and Mr. Sonam Gyaljen Sherpa both of these
-            individuals have more than two decades of experience when it comes
-            to travel and tour related activities. Our team is highly skilled
-            manpower aims to provide the best services with the help of
-            high-quality modern equipment, highly trained Sherpa/guides/ staff
-            and hospitable behavior.
-          </Typography>
-          <Typography>
-            We are legally registered with the Ministry of Culture, Tourism and
-            Civil Aviation under the auspices of the Government of Nepal. We
-            hold membership of Trekking Agencies’ Association of Nepal (TAAN),
-            Kathmandu Environment Educational Program (KEEP), Nepal Tourism
-            Board (NTB) and Nepal Mountaineering Association (NMA).
-          </Typography>
-          <Typography>
-            We believe in standard and quality service to our each and every
-            guest. We have the vision and we have the passion for making your
-            holiday into an experience never to be forgotten. Come join hands
-            with us, explore naturally exotic locations, trek to the depths of
-            Himalayas, tour luxuriously around cities We are very modestly
-            expected that you would not hesitate to write us for more
-            information and further details for your trip to Nepal.
-          </Typography>
-          <Typography>
-            We are confident that new bonds of friendship will soon be
-            established.
-          </Typography>
-          <Typography>With best regards</Typography>
-          <Typography>Mr. Dawa Sherpa & Mr. Sonam Gyaljen Sherpa</Typography>
+        <Container
+          sx={{
+            color: "#fff",
+            textAlign: "justify",
+          }}
+        >
+          <div>
+            <Typography>WELCOME TO ASIAN ALPINE TREKS</Typography>
+            <Typography>Namaste and very warm welcome to our guest!</Typography>
+            <Typography>
+              After giving worthy time of experiences in Nepal’s field of
+              trekking, we commenced to operate the trekking agency titling
+              Asian AlpineTreks & Expedition P. Ltd. Formally we are recognized
+              as a leading specialists for Trekking, Climbing, Expedition, Tour,
+              white water rafting, Jungle safari and other adventurous
+              activities operator Himalayan land of Tibet, Bhutan, India and of
+              course Nepal where we are primarily based. Our head office is
+              situated in Boudha, in the heart of Kathmandu in Nepal. The
+              company was founded by Mr.Dawa Sherpa and Mr. Sonam Gyaljen Sherpa
+              both of these individuals have more than two decades of experience
+              when it comes to travel and tour related activities. Our team is
+              highly skilled manpower aims to provide the best services with the
+              help of high-quality modern equipment, highly trained
+              Sherpa/guides/ staff and hospitable behavior.
+            </Typography>
+            <Typography>
+              We are legally registered with the Ministry of Culture, Tourism
+              and Civil Aviation under the auspices of the Government of Nepal.
+              We hold membership of Trekking Agencies’ Association of Nepal
+              (TAAN), Kathmandu Environment Educational Program (KEEP), Nepal
+              Tourism Board (NTB) and Nepal Mountaineering Association (NMA).
+            </Typography>
+            <Typography>
+              We believe in standard and quality service to our each and every
+              guest. We have the vision and we have the passion for making your
+              holiday into an experience never to be forgotten. Come join hands
+              with us, explore naturally exotic locations, trek to the depths of
+              Himalayas, tour luxuriously around cities We are very modestly
+              expected that you would not hesitate to write us for more
+              information and further details for your trip to Nepal.
+            </Typography>
+            <Typography>
+              We are confident that new bonds of friendship will soon be
+              established.
+            </Typography>
+            <Typography>With best regards</Typography>
+            <Typography>Mr. Dawa Sherpa & Mr. Sonam Gyaljen Sherpa</Typography>
+          </div>
         </Container>
       </Box>
     </div>
