@@ -1,6 +1,7 @@
 import { Typography, Box, Container, Button } from "@mui/material";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import ThemeModeContext from "../../../contexts/theme/ThemeModeContext";
 
 const imageUrls = [
   "/assets/landing_page/img1.jpg",
@@ -13,6 +14,7 @@ const imageUrls = [
 
 const LandingPage = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { isLoading } = useContext(ThemeModeContext);
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
@@ -45,55 +47,73 @@ const LandingPage = () => {
         <div
           style={{ overflow: "hidden", maxWidth: "100vw", maxHeight: "100vh" }}
         >
-          <motion.div
-            initial={{ y: "90vh" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1.5, delay: 2, ease: "easeInOut" }}
-          >
-            <Typography
-              sx={{ fontWeight: 700, fontSize: "18px", color: "#fff" }}
-            >
-              EXPERIENCE meet's
-            </Typography>
-            <Typography
-              sx={{
-                fontWeight: 800,
-                fontSize: "42px",
-                color: "#f98621",
-              }}
-            >
-              ENJOYMENT
-            </Typography>
-          </motion.div>
-          <motion.div
-            initial={{ x: "90vw" }}
-            animate={{ x: 0 }}
-            transition={{ duration: 1.8, delay: 2.5, ease: "easeInOut" }}
-          >
-            <Typography
-              sx={{
-                fontWeight: 800,
-                fontSize: "42px",
-                color: "#fff",
-              }}
-            >
-              ASIAN ALPINE
-            </Typography>
-          </motion.div>
-          <Button
-            variant="contained"
+          <Box
             sx={{
-              fontSize: "24px",
-              mt: 2,
-              color: "#fff",
-              fontWeight: 800,
-              textTransform: "none",
-              width: "330px",
-              backgroundColor: "primary.light",
+              borderBottom: "3px solid white",
+              padding: "32px",
+              borderRadius: "25px",
+              boxShadow:
+                "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
             }}
           >
-            Book a Tour
-          </Button>
+            <motion.div
+              initial={{ y: "90vh" }}
+              animate={{ y: 0 }}
+              transition={{
+                duration: 1.5,
+                delay: isLoading ? 2 : 0,
+                ease: "easeInOut",
+              }}
+            >
+              <Typography
+                sx={{ fontWeight: 700, fontSize: "18px", color: "#fff" }}
+              >
+                EXPERIENCE meet's
+              </Typography>
+              <Typography
+                sx={{
+                  fontWeight: 800,
+                  fontSize: "42px",
+                  color: "#f98621",
+                }}
+              >
+                ENJOYMENT
+              </Typography>
+            </motion.div>
+            <motion.div
+              initial={{ x: "90vw" }}
+              animate={{ x: 0 }}
+              transition={{
+                duration: 1.8,
+                delay: isLoading ? 2 : 1,
+                ease: "easeInOut",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontWeight: 800,
+                  fontSize: "32px",
+                  color: "#fff",
+                }}
+              >
+                ASIAN ALPINE
+              </Typography>
+            </motion.div>
+            <Button
+              variant="contained"
+              sx={{
+                fontSize: "24px",
+                mt: 2,
+                color: "#fff",
+                fontWeight: 800,
+                textTransform: "none",
+                width: "300px",
+                backgroundColor: "primary.light",
+              }}
+            >
+              Book a Tour
+            </Button>
+          </Box>
         </div>
       </Box>
       <Box

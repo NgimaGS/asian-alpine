@@ -11,6 +11,7 @@ export interface ColorMode {
   toggleMode: () => void;
   mode: "light" | "dark";
   isDarkMode: boolean;
+  isLoading: boolean;
   isMobile: boolean;
 }
 
@@ -19,6 +20,7 @@ export const ThemeModeContext = createContext<ColorMode>({
   mode: "light",
   isDarkMode: false,
   isMobile: false,
+  isLoading: true,
 });
 
 interface ThemeContextProviderProps {
@@ -28,6 +30,19 @@ interface ThemeContextProviderProps {
 export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({
   children,
 }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading for 2 seconds
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+
+    return () => {
+      clearTimeout(timer); // Clean up the timer if the component unmounts
+    };
+  }, []);
+
   const [isDarkMode, setIsDarkMode] = useState(
     window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -58,6 +73,7 @@ export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({
     mode,
     isDarkMode,
     isMobile,
+    isLoading,
   };
 
   let theme = createTheme({

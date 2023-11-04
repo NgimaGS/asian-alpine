@@ -1,21 +1,12 @@
 import Loader from "../components/loader/Loader";
 import Navbar from "../components/navbar/Navbar";
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import { motion } from "framer-motion";
 
+import ThemeModeContext from "../contexts/theme/ThemeModeContext";
+
 export const AppLayout = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading for 2 seconds
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2500);
-
-    return () => {
-      clearTimeout(timer); // Clean up the timer if the component unmounts
-    };
-  }, []);
+  const { isLoading } = useContext(ThemeModeContext);
 
   return (
     <div
