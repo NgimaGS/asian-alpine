@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
@@ -42,10 +42,17 @@ function ElevationScroll(props: Props) {
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "About Us", "Destination", "Activity", "Contact Us"];
+const navItems = [
+  { label: "Home", value: "/" },
+  { label: "About Us", value: "/about-us" },
+  { label: "Destination", value: "/destination" },
+  { label: "Activity", value: "/activity" },
+  { label: "Contact Us", value: "/contact-us" },
+];
 
 const Navbar = (props: Props) => {
   const { window } = props;
+  const navigate = useNavigate();
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -67,9 +74,12 @@ const Navbar = (props: Props) => {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+          <ListItem key={item.label} disablePadding>
+            <ListItemButton
+              sx={{ textAlign: "center" }}
+              onClick={() => navigate(item.value)}
+            >
+              <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -113,9 +123,12 @@ const Navbar = (props: Props) => {
                 }}
               >
                 {navItems.map((item) => (
-                  <ListItem key={item} disablePadding>
-                    <ListItemButton sx={{ textAlign: "center" }}>
-                      <ListItemText primary={item} />
+                  <ListItem key={item.label} disablePadding>
+                    <ListItemButton
+                      sx={{ textAlign: "center" }}
+                      onClick={() => navigate(item.value)}
+                    >
+                      <ListItemText primary={item.label} />
                     </ListItemButton>
                   </ListItem>
                 ))}
