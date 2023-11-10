@@ -1,0 +1,31 @@
+.service-card {
+  padding: 16px;
+  cursor: pointer;
+  position: relative;
+}
+
+.service-content {
+  position: relative;
+  top: 20px;
+  visibility: hidden;
+  transition: all ease-in-out 0.3s;
+  opacity: 0;
+}
+
+.service-title {
+  position: relative;
+  top: 26px;
+  transition: all ease-in-out 0.3s;
+}
+
+.service-card:hover .service-content {
+  top: 0;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.service-card:hover .service-title {
+  top: 0;
+  transition-delay: 0.2s;
+}
