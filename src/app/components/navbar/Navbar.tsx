@@ -11,7 +11,6 @@ import {
   ListItemButton,
   ListItemText,
   Toolbar,
-  Typography,
 } from "@mui/material";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import * as React from "react";
@@ -68,9 +67,7 @@ const Navbar = (props: Props) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
+      <img src="/assets/logo/logo.png" alt="logo" style={{ width: "120px" }} />
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -100,7 +97,7 @@ const Navbar = (props: Props) => {
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ pr: 2, display: { sm: "none" } }}
+              sx={{ pr: 2, display: { md: "none" } }}
             >
               <MenuIcon />
             </IconButton>
