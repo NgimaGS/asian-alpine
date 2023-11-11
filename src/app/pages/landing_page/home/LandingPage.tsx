@@ -1,12 +1,14 @@
 import { Typography, Box, Container } from "@mui/material";
 import HeroSection from "./parts/HeroSection";
 import PopularPackages from "./parts/PopularPackages";
+import Activities from "./parts/Activities";
 
 const LandingPage = () => {
   return (
     <div>
       <HeroSection />
       <PopularPackages />
+      <Activities />
 
       <Box
         sx={{

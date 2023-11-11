@@ -3,7 +3,7 @@ import "./css/popularpackages.css";
 
 const PopularPackages = () => {
   return (
-    <Container sx={{ pt: "128px", pb: "128px" }}>
+    <Container sx={{ pt: "128px", pb: "64px" }}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Typography
