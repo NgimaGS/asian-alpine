@@ -14,7 +14,7 @@ const Activities = () => {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Grid container>
+          <Grid container sx={{ cursor: "pointer" }}>
             <Grid
               item
               xs={12}
