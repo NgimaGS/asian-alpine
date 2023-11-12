@@ -1,7 +1,7 @@
-import { Typography, Box, Container } from "@mui/material";
 import HeroSection from "./parts/HeroSection";
 import PopularPackages from "./parts/PopularPackages";
 import Activities from "./parts/Activities";
+import Featured from "./parts/Featured";
 
 const LandingPage = () => {
   return (
@@ -9,8 +9,9 @@ const LandingPage = () => {
       <HeroSection />
       <PopularPackages />
       <Activities />
+      <Featured />
 
-      <Box
+      {/* <Box
         sx={{
           minHeight: "100vh",
           maxWidth: "100vw",
@@ -70,7 +71,7 @@ const LandingPage = () => {
             <Typography>Mr. Dawa Sherpa & Mr. Sonam Gyaljen Sherpa</Typography>
           </div>
         </Container>
-      </Box>
+      </Box> */}
     </div>
   );
 };
