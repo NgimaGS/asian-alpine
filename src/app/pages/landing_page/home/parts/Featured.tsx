@@ -4,11 +4,6 @@ import "react-multi-carousel/lib/styles.css";
 
 const Featured = () => {
   const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 3,
@@ -25,9 +20,13 @@ const Featured = () => {
 
   return (
     <Box sx={{ backgroundColor: "#000", pt: "68px" }}>
-      <Container>
+      <Container sx={{ mb: "64px" }}>
         <Grid container spacing={2}>
-          <Grid item xs={12} sx={{ display: "flex", justifyContent: "center" }}>
+          <Grid
+            item
+            xs={12}
+            sx={{ display: "flex", justifyContent: "center", mt: "32px" }}
+          >
             <Typography
               fontSize="32px"
               fontWeight={700}
@@ -40,36 +39,68 @@ const Featured = () => {
               FEATURED PACKAGES
             </Typography>
           </Grid>
-          <Grid item xs={12}>
-            <Carousel responsive={responsive}>
-              <Paper sx={{ m: "8px", p: "16px", height: "300px" }}>
-                <Typography color="#fff">Mountain Biking</Typography>
+          <Grid item xs={12} sx={{ mt: "64px", mb: "64px" }}>
+            <Carousel
+              ssr
+              partialVisbile
+              deviceType={"desktop"}
+              itemClass="image-item"
+              responsive={responsive}
+            >
+              <Paper
+                elevation={600}
+                sx={{ m: "8px", p: "16px", height: "300px" }}
+              >
+                <Typography color="#fff" textAlign="center">
+                  Mountain Biking
+                </Typography>
                 <Button fullWidth> Read More</Button>
               </Paper>
-              <Paper sx={{ m: "8px", p: "16px", height: "300px" }}>
-                <Typography color="#fff">Langtang Gosaikunda Trek</Typography>
+              <Paper
+                elevation={600}
+                sx={{ m: "8px", p: "16px", height: "300px" }}
+              >
+                <Typography color="#fff" textAlign="center">
+                  Langtang Gosaikunda Trek
+                </Typography>
                 <Button fullWidth> Read More</Button>
               </Paper>
-              <Paper sx={{ m: "8px", p: "16px", height: "300px" }}>
-                <Typography color="#fff">Langtang Ganja - La Pass</Typography>
+              <Paper
+                elevation={600}
+                sx={{ m: "8px", p: "16px", height: "300px" }}
+              >
+                <Typography color="#fff" textAlign="center">
+                  Langtang Ganja - La Pass
+                </Typography>
                 <Button fullWidth> Read More</Button>
               </Paper>
-              <Paper sx={{ m: "8px", p: "16px", height: "300px" }}>
-                <Typography color="#fff">
+              <Paper
+                elevation={600}
+                sx={{ m: "8px", p: "16px", height: "300px" }}
+              >
+                <Typography color="#fff" textAlign="center">
                   Kathmandu-Nagarkot-Dhulikhel-Pokhara-Chitwan
                 </Typography>
                 <Button fullWidth> Read More</Button>
               </Paper>
-              <Paper sx={{ m: "8px", p: "16px", height: "300px" }}>
-                <Typography color="#fff">
+              <Paper
+                elevation={600}
+                sx={{ m: "8px", p: "16px", height: "300px" }}
+              >
+                <Typography color="#fff" textAlign="center">
                   Jiri Everest Base Camp Trek
                 </Typography>
                 <Button fullWidth> Read More</Button>
               </Paper>
-              <Paper sx={{ m: "8px", p: "16px", height: "300px" }}>
-                <Typography color="#fff">Gorkha Heritage Trek</Typography>
+              <Paper
+                elevation={600}
+                sx={{ m: "8px", p: "16px", height: "300px" }}
+              >
+                <Typography color="#fff" textAlign="center">
+                  Gorkha Heritage Trek
+                </Typography>
+                <Button fullWidth> Read More</Button>
               </Paper>
-              <Button fullWidth> Read More</Button>
             </Carousel>
           </Grid>
         </Grid>
