@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { motion } from "framer-motion";
 
 import ThemeModeContext from "../contexts/theme/ThemeModeContext";
+import Footer from "../components/footer/Footer";
 
 export const AppLayout = () => {
   const { isLoading } = useContext(ThemeModeContext);
@@ -29,6 +30,7 @@ export const AppLayout = () => {
         <Navbar>
           <></>
         </Navbar>
+        <Footer />
       </div>
     </div>
   );

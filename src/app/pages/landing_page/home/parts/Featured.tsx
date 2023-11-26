@@ -51,6 +51,14 @@ const Featured = () => {
                 elevation={600}
                 sx={{ m: "8px", p: "16px", height: "300px" }}
               >
+                <img
+                  style={{
+                    width: "100%",
+                    objectFit: "cover",
+                    height: "230px",
+                  }}
+                  src="/assets/landing_page/featured/mountain-biking.jpg"
+                />
                 <Typography color="#fff" textAlign="center">
                   Mountain Biking
                 </Typography>
@@ -60,6 +68,14 @@ const Featured = () => {
                 elevation={600}
                 sx={{ m: "8px", p: "16px", height: "300px" }}
               >
+                <img
+                  style={{
+                    width: "100%",
+                    objectFit: "cover",
+                    height: "230px",
+                  }}
+                  src="/assets/landing_page/featured/langtang.jpg"
+                />
                 <Typography color="#fff" textAlign="center">
                   Langtang Gosaikunda Trek
                 </Typography>
@@ -69,6 +85,14 @@ const Featured = () => {
                 elevation={600}
                 sx={{ m: "8px", p: "16px", height: "300px" }}
               >
+                <img
+                  style={{
+                    width: "100%",
+                    objectFit: "cover",
+                    height: "230px",
+                  }}
+                  src="/assets/landing_page/featured/langtang-ganja.jpg"
+                />
                 <Typography color="#fff" textAlign="center">
                   Langtang Ganja - La Pass
                 </Typography>
@@ -78,6 +102,14 @@ const Featured = () => {
                 elevation={600}
                 sx={{ m: "8px", p: "16px", height: "300px" }}
               >
+                <img
+                  style={{
+                    width: "100%",
+                    objectFit: "cover",
+                    height: "230px",
+                  }}
+                  src="/assets/landing_page/featured/kathmandu-nagarkot.jpg"
+                />
                 <Typography color="#fff" textAlign="center">
                   Kathmandu-Nagarkot-Dhulikhel-Pokhara-Chitwan
                 </Typography>
@@ -87,6 +119,14 @@ const Featured = () => {
                 elevation={600}
                 sx={{ m: "8px", p: "16px", height: "300px" }}
               >
+                <img
+                  style={{
+                    width: "100%",
+                    objectFit: "cover",
+                    height: "230px",
+                  }}
+                  src="/assets/landing_page/featured/jiri-everest.jpg"
+                />
                 <Typography color="#fff" textAlign="center">
                   Jiri Everest Base Camp Trek
                 </Typography>
@@ -96,6 +136,14 @@ const Featured = () => {
                 elevation={600}
                 sx={{ m: "8px", p: "16px", height: "300px" }}
               >
+                <img
+                  style={{
+                    width: "100%",
+                    objectFit: "cover",
+                    height: "230px",
+                  }}
+                  src="/assets/landing_page/featured/gorkha-heritage.jpg"
+                />
                 <Typography color="#fff" textAlign="center">
                   Gorkha Heritage Trek
                 </Typography>
