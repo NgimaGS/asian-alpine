@@ -1,5 +1,5 @@
 const AboutUs = () => {
-  return <div>AboutUs</div>;
+  return <div style={{ minHeight: "80vh" }}>AboutUs</div>;
 };
 
 export default AboutUs;
