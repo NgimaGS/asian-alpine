@@ -1,5 +1,5 @@
 const ContactUs = () => {
-  return <div>ContactUs</div>;
+  return <div style={{ minHeight: "100vh" }}>ContactUs</div>;
 };
 
 export default ContactUs;

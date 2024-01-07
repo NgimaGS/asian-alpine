@@ -13,7 +13,7 @@ const Package = () => {
 
   return (
     <div>
-      <Container sx={{ pt: "150px", minHeight: "80vh" }}>
+      <Container sx={{ pt: "150px", minHeight: "100vh" }}>
         <Grid container spacing={2} sx={{ mb: "32px" }}>
           <Grid item xs={12}>
             <Typography sx={{ color: "white" }} variant="h4">

@@ -14,6 +14,7 @@ const AppRoutes = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/destination" element={<Package />} />
+        <Route path="/activity" element={<Package />} />
         <Route path="/destination/package" element={<PackageDetail />} />
       </Route>
     </Routes>
