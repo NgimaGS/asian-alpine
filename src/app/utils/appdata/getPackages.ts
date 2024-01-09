@@ -1,7 +1,7 @@
 import { PackageData, packageData } from "../data/packages";
 
-export const getPackageById = (id: number): PackageData | undefined => {
-  return packageData.find((pkg, index) => index === id);
+export const getPackageByName = (name: string): PackageData | undefined => {
+  return packageData.find((pkg) => name === pkg.name);
 };
 
 export const filterPackages = (filters: any): PackageData[] => {
